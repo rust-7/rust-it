@@ -1,4 +1,4 @@
-import { Resolver, Query, Ctx, Int, Arg, Mutation } from "type-graphql";
+import { Resolver, Query, Ctx, Arg, Mutation } from "type-graphql";
 import { Post } from "../entities/Post";
 import { MyContext } from "../types";
 
@@ -20,9 +20,8 @@ export class PostResolver {
         return em.findOne(Post, {id});
     }
 
-
     // Post creation
-    // em: Entity Manager
+    // PS. em: Entity Manager
     @Mutation(() => Post)
     async createPost(
         @Arg("title") title: string, 
